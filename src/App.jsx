@@ -22,8 +22,11 @@ import { useState } from "react";
 //Try commenting out the variable lines above and uncomment the below ones to see how it works
 //You will need to add your variables to the .env file in the left menu but do not do anything else here except uncomment below
 
-const ApiKey = process.env.REACT_APP_APIKEY;
-const AzureEndpoint = process.env.REACT_APP_ENDPOINT_URL;
+const ApiKey = process.env.REACT_APP_MY_APIKEY;
+const AzureEndpoint = process.env.REACT_APP_MY_ENDPOINT;
+
+console.log(ApiKey);
+console.log(AzureEndpoint);
 
 export default function App() {
   //in React we use "hooks" like setState to define the state of changing variables.
