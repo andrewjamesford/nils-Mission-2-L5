@@ -33,6 +33,7 @@ export default function App() {
   //We can leave the variable empty or we can define it an initial value
   //here, we leave data empty because we haven't retrieved it yet, but we will define the html <input value={image} />
   const [data, setData] = useState();
+  const [caption, setCaption] = useState("");
   const [image, setImage] = useState(
     "https://www.toyota.co.nz/globalassets/new-vehicles/camry/2021/camry-zr-axhzr-nm1-axrzr-nm1/clear-cuts/updated-clear-cuts/camry-zr-eclipse.png"
   );
@@ -77,6 +78,7 @@ export default function App() {
       //this is also good to reference and make it easier when writing the html to display it,
       //but we should remove it and ideally use better tools to view it after confirming operation as we could forget to remove it
       console.log(parsedData);
+      setCaption(parsedData.description.captions[0].text);
     } catch (error) {
       console.error("There is an error during fetch:", error);
     }
@@ -84,7 +86,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>How to call from Azure API example</h1>
+      <h1>{caption}</h1>
       <div className="inputs">
         <input
           className="Input"
